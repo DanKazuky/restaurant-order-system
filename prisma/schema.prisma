@@ -32,6 +32,6 @@ model Order {
   items        Json
   clientId     String
   restaurantId String
-  client       Client   @relation(fields: [clientId], references: [id])
-  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  client       Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
 }
